@@ -36,7 +36,10 @@ const App = () => {
   return (
     <div className="container flex flex-col justify-center items-center h-screen mx-auto mt-8">
       <h1 className="text-3xl font-semibold ">Short URL Generator</h1>
-      <a href="" className="text-sm mb-4">
+      <a
+        href="https://github.com/avayyyyyyy/"
+        className="text-sm text-blue-500 hover:text-blue-600 mb-4"
+      >
         By Shubhankit Jain
       </a>
       <div className="flex items-center mb-4">
