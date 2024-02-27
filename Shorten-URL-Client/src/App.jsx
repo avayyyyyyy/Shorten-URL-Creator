@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const App = () => {
@@ -9,12 +9,14 @@ const App = () => {
 
   const generateShortUrl = async () => {
     try {
-      // console.log(originalUrl);
       axios
         .post(`http://localhost:3000/url`, {
           URL: originalUrl,
         })
         .then((res) => {
+          if (res.status === false) {
+            toast.error("Error Occured");
+          }
           setShortUrl(`http://localhost:3000/${res.data.message}`);
         });
     } catch (error) {

@@ -4,6 +4,10 @@ import { URLModels } from "../Models/urlModel.js";
 export const GenerateID = async (req, res) => {
   let { URL } = req.body;
 
+  if (!URL) {
+    res.status(400).json({ success: false, message: "Empty Input Sent" });
+  }
+
   if (URL.startsWith("https://")) {
     URL = URL.slice(8);
   } else if (URL.startsWith("http://")) {
